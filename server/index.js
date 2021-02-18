@@ -19,16 +19,14 @@ const counter = function(req, res, next) {
     next();
 }
 
-app.use(counter);
-
 app.use(express.static(staticPath));
 
 app.get('/', function(req, res){
     res.render('index');
 });
 
-app.get('/famous', function(req, res){
-    res.render('famous');
+app.get('/famous', counter, function(req, res){
+    res.render('famous', {count=});
 });
 
 
