@@ -26,7 +26,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/famous', counter, function(req, res){
-    res.render('famous', {count=});
+    res.render('famous', {count: x});
 });
 
 
