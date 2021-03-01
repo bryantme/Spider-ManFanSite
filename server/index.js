@@ -6,7 +6,7 @@ const session = require('express-session');
 
 //Navigation
 
-const clientPath = path.join(_dirname,'../client/');
+const clientPath = path.join(__dirname,'../client/');
 const staticPath = path.join(clientPath,'/static/');
 const viewsPath =  path.join(clientPath,'/views/');
 
@@ -44,6 +44,6 @@ app.get('/famous', function(req, res) {
 });
 
 app.post('/welcome', (req, res) => {
-    req.sassion.username=req.body.visitorname);
+    req.sassion.username=req.body.visitorname;
     res.redirect('/');
 });
