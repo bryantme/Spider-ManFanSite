@@ -29,8 +29,8 @@ app.listen(2000);
 
 // Setting Views
 
-app.set('views-engine','ejs');
-app.set('views', viewsPath);
+app.set('view engine','ejs');
+app.set('views',viewsPath);
 
 // Routes
 
