@@ -36,14 +36,15 @@ app.set('views',viewsPath);
 
 
 app.get('/', function(req, res) {
-    res.render('index', {nomen: req.session.username});
+    console.log(req.session)
+    res.render('index', {data: req.session});
 });
 
 app.get('/famous', function(req, res) {
-    res.render('famous', {nomen: req.session.username});
+    res.render('famous', {data: req.session});
 });
 
 app.post('/welcome', (req, res) => {
     req.sassion.username=req.body.visitorname;
-    res.redirect('/');
+    res.send('SUCCESS');
 });
