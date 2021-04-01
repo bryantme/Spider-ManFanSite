@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>All About Spider-Man</title>
+    <%- include('header.ejs') %>
+</head>
+
+<body>
+
+<div id="mainpanel">
+<h1>So you can come to learn more about Spider-Man...</h1>
+
+<table width="100%">
+<% postset.forEach(function(bpost) { %>
+<%- include('blogpostpreview', {post: bpost}) %>
+<% }) %>
+</table>
+<br/><br/>
+<a href="write/">Write a post</a>
+</div>
+<%- include('navbar.ejs') %>
+
+</body>
+    
+</html>
