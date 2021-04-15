@@ -80,19 +80,18 @@ app.get('/blog/:id/', (req,res) => {
     })
 });
 
-app.post('/writeblogpost', (req,res)=>{
-    console.log(res.body);
-    res.redirect('/');
-});
 
-app.get('/blog/writepost', async (req,res)=>{
+// This lets you write posts to database
+
+app.post('/writeblogpost', async (req,res)=>{
     console.log(req.body);
     try {
-    let newPost = new BlogPost(req, body);
+    let newPost = new BlogPost(req.body);
     await newPost.save();
     res.redirect('/blog');
     }
     catch(e) {
+        console.log(e);
         res.redirect('/blog/write');
     }
 });    
